@@ -1,63 +1,15 @@
 import React from "react";
 import faker from "faker";
+import CommentDetail from "./CommentDetail";
 
 const App = () => {
   return (
     <div className="ui container comments">
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" src={faker.image.avatar()} />
-        </a>
-        <div className="content">
-            <a href="/" className="author">
-                {faker.name.firstName()}
-            </a>
-            <div className="metadata">
-                <span className="date">
-                    Today at 9:00PM
-                </span>
-            </div>
-            <div className="text">
-                Random comment
-            </div>
-        </div>
-      </div>
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" src={faker.image.avatar()} />
-        </a>
-        <div className="content">
-            <a href="/" className="author">
-                {faker.name.firstName()}
-            </a>
-            <div className="metadata">
-                <span className="date">
-                    Today at 9:00PM
-                </span>
-            </div>
-            <div className="text">
-                Random comment
-            </div>
-        </div>
-      </div>
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" src={faker.image.avatar()} />
-        </a>
-        <div className="content">
-            <a href="/" className="author">
-                {faker.name.firstName()}
-            </a>
-            <div className="metadata">
-                <span className="date">
-                    Today at 9:00PM
-                </span>
-            </div>
-            <div className="text">
-                Random comment
-            </div>
-        </div>
-      </div>
+      <CommentDetail author = {faker.name.firstName()}/>
+      <CommentDetail author = {faker.name.firstName()}/>
+      <CommentDetail author = {faker.name.firstName()}/>
+      <CommentDetail author = {faker.name.firstName()}/>
+      <CommentDetail author = {faker.name.firstName()}/>
     </div>
   );
 };
