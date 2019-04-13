@@ -1,16 +1,26 @@
 import React from "react";
 
 class App extends React.Component {
-  render() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lat: null
+    };
+
     window.navigator.geolocation.getCurrentPosition(
       position => {
-        console.log(position);
+        const latitude = position.coords.latitude;
+        this.setState({
+          lat: latitude
+        });
       },
       error => {
         console.log(error);
       }
     );
-    return <div>Hi there!</div>;
+  }
+  render() {
+    return <div>Latitude: {this.state.lat} </div>;
   }
 }
 
