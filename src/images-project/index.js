@@ -1,7 +1,11 @@
 import React from "react";
 import SearchBar from "./components/SearchBar";
 const Images = props => {
-  return <SearchBar />;
+  return (
+    <div className="ui container">
+      <SearchBar />
+    </div>
+  );
 };
 
 export default Images;
