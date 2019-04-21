@@ -5,10 +5,21 @@ const VideoDetail = ({ video }) => {
     return <div>Loading...</div>;
   }
 
+  const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
+
   return (
-    <div className="ui segment">
-      <h4 className="ui header">{video.snippet.title}</h4>
-      <p>{video.snippet.description}</p>
+    <div>
+      <div>
+        <iframe
+          src={videoSrc}
+          title="youtube video"
+          style={{ width: "100%", height: "400px" }}
+        />
+      </div>
+      <div className="ui segment">
+        <h4 className="ui header">{video.snippet.title}</h4>
+        <p>{video.snippet.description}</p>
+      </div>
     </div>
   );
 };
