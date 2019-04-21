@@ -2,9 +2,10 @@ import React from "react";
 import SearchBar from "./components/SearchBar";
 import YoutubeSearch from "./api/youtube-search";
 import VideoList from "./components/VideoList";
+import VideoDetail from "./components/VideoDetail";
 
 class App extends React.Component {
-  state = { videos: [] };
+  state = { videos: [], selectedVideo: null };
   onSearchSubmit = async term => {
     const response = await YoutubeSearch.get("/search", {
       params: {
@@ -16,11 +17,21 @@ class App extends React.Component {
     });
   };
 
+  onVideoSelect = video => {
+    this.setState({
+      selectedVideo: video
+    });
+  };
+
   render() {
     return (
       <div>
         <SearchBar onFormSubmit={this.onSearchSubmit} />
-        <VideoList videos={this.state.videos} />
+        <VideoDetail video={this.state.selectedVideo} />
+        <VideoList
+          videos={this.state.videos}
+          onVideoSelect={this.onVideoSelect}
+        />
       </div>
     );
   }
