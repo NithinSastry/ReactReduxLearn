@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 // import { selectSong } from "./actions";
 import reducers from "./reducers";
 import SongsList from "./components/SongsList";
+import SongDetail from "./components/SongDetail";
 
 const App = () => {
   return (
@@ -12,6 +13,9 @@ const App = () => {
       <div className="ui row">
         <div className="column eight wide">
           <SongsList />
+        </div>
+        <div className="column eight wide">
+          <SongDetail />
         </div>
       </div>
     </div>
