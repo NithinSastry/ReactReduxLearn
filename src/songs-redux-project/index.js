@@ -2,7 +2,6 @@ import React from "react";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 
-// import { selectSong } from "./actions";
 import reducers from "./reducers";
 import SongsList from "./components/SongsList";
 import SongDetail from "./components/SongDetail";
